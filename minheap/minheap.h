@@ -3,7 +3,6 @@
 // minheap interface
 
 // A Module for a minheap data structure
-
 struct minheap {
   int len;
   int maxlen;
