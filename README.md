@@ -1,1 +1,2 @@
 # ADTs
+abstruct data types
