@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "desarray.h"
 
-// This is a I/O test client for destack
+// This is a I/O test client for desarray.c
 
 // check_result(result) returns false if result is 1
 //   otherwise true
