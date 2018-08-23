@@ -142,7 +142,9 @@ void destack_destroy(struct destack *s) {
   free(s);
 }
 
-// DO NOT MODIFY THIS FUNCTION
+// destack_print(s) prints the contents of the double ended stack s
+// effects: prints to output
+// time: O(n)
 void destack_print(const struct destack *s) {
   assert(s);
   struct dllnode *temp = s->bot;
