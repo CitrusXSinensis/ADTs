@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-// DO NOT MODIFY THIS STRUCTURE
+// a double ended structure use linked list
 struct dllnode {
   int item;
   struct dllnode *prev;
