@@ -1,4 +1,3 @@
-#include "mergesort.h"
 #include "set.h"
 #include <assert.h>
 #include <stdlib.h>
@@ -186,6 +185,13 @@ struct set *set_intersect(const struct set *s1, const struct set *s2) {
   return union1;
 }
 
+// cmp(a, b) a integer compare function
+int cmp(const void *a, const void *b) {
+  const int *a1 = a;
+  const int *b1 = b;
+  return *a1 - *b1;
+}
+
 // array_to_set(a, len) returns a new set that is all the unique elements of a
 // requires: len > 0
 // effects: allocates memory for the new set (caller must call set_destroy)
@@ -197,7 +203,7 @@ struct set *array_to_set(const int a[], int len) {
   for (int j = 0; j < len; ++j) {
     b[j] = a[j];
   }
-  merge_sort(b, len);
+  qsort(b, len, 4, &cmp);
   struct set *union1 = set_create();
   free(union1->stack);
   union1->stack = malloc(sizeof(int) * len);
