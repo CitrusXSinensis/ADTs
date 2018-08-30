@@ -54,7 +54,7 @@ char* connect_all(char** los, int len) {
   strcpy(s, los[0]);
   int pos = strlen(los[0]);
   for (int i = 1; i <len; ++i) {
-    s = realloc(s, (pos + strlen(los[i])) * sizeof(char));
+    s = realloc(s, (pos + strlen(los[i]) + 1) * sizeof(char));
     strcat(s, los[i]);
     pos += strlen(los[i]);
   }
