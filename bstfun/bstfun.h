@@ -45,7 +45,7 @@ void bst_sort_array(int* nums, int len);
 // O(nlogn)
 int* bst_remove_dup(int* nums, int len, int* newlen);
 
-// Produce the sum of all the integers that are greater and equal to threshold.
+// Produce the sum of all the integers that are greater threshold.
 // O(n)
 int bst_sum_greater(struct bst* t, int threshold);
 
