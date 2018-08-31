@@ -24,7 +24,7 @@ bool bst_insert(struct bst* b, int key);
 
 // Given a sorted array of integers with size <len>, produce a
 // newly allocated balanced binary search tree using integers from array.
-// Must be O(n)
+// O(n)
 struct bst* sorted_array_to_bst(int *a, int len);
 
 // Given a binary search tree, produce a newly allocated integer arrays
