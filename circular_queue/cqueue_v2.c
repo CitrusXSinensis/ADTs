@@ -4,6 +4,8 @@
 #include <string.h>
 #include "cqueue.h"
 
+// This version has the resizing feature
+
 struct cqueue {
   int* data;
   int max_len;
