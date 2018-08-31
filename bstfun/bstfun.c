@@ -72,6 +72,30 @@ bool bst_insert(struct bst* b, int key) {
   return true;
 }
 
+struct bstnode* arr_to_bst_h(struct bstnode* node, int* a, int first, int last) {
+  int mid = (first + last) / 2;
+  node = malloc(sizeof (struct bstnode));
+  node->item = a[mid];
+  if(first <= mid - 1) {
+    node->left = arr_to_bst_h(node->left, a, first, mid - 1);
+  } else {
+    node->left = NULL;
+  }
+  if (mid + 1 <= last) {
+    node->right = arr_to_bst_h(node->right, a, mid + 1, last);
+  } else {
+    node->right = NULL;
+  }
+  return node;
+}
+
+struct bst* sorted_array_to_bst(int *a, int len) {
+  struct bst* t = bst_create();
+  if (len == 0) return NULL;
+  t->root = arr_to_bst_h(t->root, a, 0, len - 1);
+  return t;
+}
+
 void bst_to_arr_h(int* a, struct bstnode* node, int* index) {
   if (node) {
     bst_to_arr_h(a, node->left, index);
@@ -237,7 +261,13 @@ int main(void) {
   assert(bst_sum_greater(bt, 9) == 0);
 
   printf("bst_sum_greater passed!\n");
-
+  
+  int arr4[] = {1, 3, 4, 6, 8, 12, 31, 55, 87, 124, 666};
+  struct bst* art = sorted_array_to_bst(arr4, 11);
+  bst_print(art->root, 0);
+  printf("sorted_array_to_bst passed!\n");
+  bst_destroy(art);
+  
   int height;
   int nodes;
   int leaves;
