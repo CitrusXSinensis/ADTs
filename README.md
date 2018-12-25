@@ -1,4 +1,4 @@
-# ADTs
-abstruct data types
+# ADTs & Algorithms
+elementary algorithms and abstruct data types
 
-_in Jul and Aug 2018
+from Apr 2018 to Aug 2018
