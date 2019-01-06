@@ -70,3 +70,21 @@ void merge_sort(int a[], int len) {
   free(left);
   free(right);
 } 
+
+void quick_sort_range(int a[], int first, int last) {
+  if (last <= first) return;
+  // choose first element as the pivot
+  int pivot = a[first];
+  // index to put next element larger than pivot
+  int pos = last;
+  
+  for (int i = last; i > first; --i) {
+    if (a[i] > pivot) {
+      swap(&a[pos], &a[i]);
+      --pos;
+    }
+  }
+  swap(&a[pos], &a[first]);   // put pivot in correct place
+  quick_sort_range(a, first, pos-1);
+  quick_sort_range(a, pos+1, last);
+}
