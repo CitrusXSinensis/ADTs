@@ -88,3 +88,7 @@ void quick_sort_range(int a[], int first, int last) {
   quick_sort_range(a, first, pos-1);
   quick_sort_range(a, pos+1, last);
 }
+
+void quick_sort(int a[], int len) {
+  quick_sort_range(a, 0, len-1);
+}
