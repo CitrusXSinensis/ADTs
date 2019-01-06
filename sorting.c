@@ -47,3 +47,21 @@ void merge(int arr[], const int arr1[], int len1, const int arr2[], int len2) {
     }
   }
 }
+
+// O(nlogn)
+void merge_sort(int a[], int len) { 
+  if (len <= 1) return; 
+  int llen = len / 2; 
+  int rlen = len - llen;
+  int *left = malloc(llen * sizeof(int)); 
+  int *right = malloc(rlen * sizeof(int));
+  for (int i = 0; i < llen; ++i) {
+    left[i] = a[i];
+  }
+  for (int i = 0; i < rlen; ++i) {
+    right[i] = a[i + llen];
+  }
+  merge_sort(left, llen); merge_sort(right, rlen);
+  merge(a, left, llen, right, rlen);
+  free(left); free(right);
+} 
