@@ -29,14 +29,20 @@ void insertion_sort(int a[], int len) {
   }
 }
 
-void merge(int dest[], const int arr1[], int len1, const int arr2[], int len2) {
+// merge(arr, arr1, len1, arr2, len2) modifies arr to have elements from both arr1 and arr2
+//   in sorted order
+// requires: length of arr is at least (len1 + len2) 
+// arr1 and arr2 are sorted
+// O(n), where n is len1 + len2
+
+void merge(int arr[], const int arr1[], int len1, const int arr2[], int len2) {
   int pos1 = 0; int pos2 = 0;
   for (int i = 0; i < len1 + len2; ++i) {
     if (pos2 == len2 || (pos1 < len1 && arr1[pos1] < arr2[pos2])) {
-      dest[i] = arr1[pos1];
+      arr[i] = arr1[pos1];
       ++pos1;;
     } else {
-      dest[i] = arr2[pos2];
+      arr[i] = arr2[pos2];
       ++pos1;
     }
   }
