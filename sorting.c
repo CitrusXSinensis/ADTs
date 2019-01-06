@@ -28,3 +28,16 @@ void insertion_sort(int a[], int len) {
     }
   }
 }
+
+void merge(int dest[], const int arr1[], int len1, const int arr2[], int len2) {
+  int pos1 = 0; int pos2 = 0;
+  for (int i = 0; i < len1 + len2; ++i) {
+    if (pos2 == len2 || (pos1 < len1 && arr1[pos1] < arr2[pos2])) {
+      dest[i] = arr1[pos1];
+      ++pos1;;
+    } else {
+      dest[i] = arr2[pos2];
+      ++pos1;
+    }
+  }
+}
