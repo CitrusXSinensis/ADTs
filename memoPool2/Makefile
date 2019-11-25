@@ -1,6 +1,6 @@
 CXX = g++-5
 CXXFLAGS = -g -std=c++14 -Wall -MMD
-EXEC = a2q5
+EXEC = memoPool2
 OBJECTS = pool_test_harness.o pool.o
 DEPENDS = ${OBJECTS:.o=.d}
 
