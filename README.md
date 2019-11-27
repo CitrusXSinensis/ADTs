@@ -6,3 +6,6 @@ Note that clients are responsible to import a dictionary to realize spell-check 
 
 ### Memo Pool
 Program simulates memory allocation processes in C-Like language.
+
+### k-d Partition
+A constructor of k-d tree
